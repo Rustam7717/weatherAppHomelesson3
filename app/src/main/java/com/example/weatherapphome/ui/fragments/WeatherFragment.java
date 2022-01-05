@@ -42,8 +42,12 @@ public class WeatherFragment extends Fragment {
     }
 
     private void setObservers() {
-        viewModel.getWeatherData().observe(getViewLifecycleOwner(), weatherModelsResource ->
-                binding.nameApp.setText(weatherModelsResource.data.getName()));
+        viewModel.getWeatherData().observe(getViewLifecycleOwner(), weatherModels -> {
+            binding.location.setText(weatherModels.data.getName());
+            binding.tempUp.setText(String.valueOf(weatherModels.data.getMain().getTempMax()));
+            binding.tempDown.setText(String.valueOf(weatherModels.data.getMain().getTempMin()));
+            binding.weatherTemp.setText(String.valueOf(weatherModels.data.getCoord().getLat()));
 
+        });
     }
 }
