@@ -1,16 +1,13 @@
 package com.example.weatherapphome.ui.fragments;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.weatherapphome.databinding.FragmentWeatherBinding;
 
 
@@ -47,5 +44,6 @@ public class WeatherFragment extends Fragment {
     private void setObservers() {
         viewModel.getWeatherData().observe(getViewLifecycleOwner(), weatherModelsResource ->
                 binding.nameApp.setText(weatherModelsResource.data.getName()));
+
     }
 }

@@ -1,11 +1,8 @@
 package com.example.weatherapphome;
 
 import android.app.Application;
-
 import com.example.weatherapphome.data.remote.RetrofitClient;
 import com.example.weatherapphome.data.remote.WeatherAppApi;
-
-import retrofit2.Retrofit;
 
 public class App extends Application {
 
