@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="0dp"
     android:layout_height="match_parent">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="325dp"
         android:src="@drawable/graphic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.viewpager.widget.ViewPager
+    <ImageView
         android:id="@+id/view_pager_board"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@id/RL"
+        tools:layout_editor_absoluteY="52dp">
 
 
-    </androidx.viewpager.widget.ViewPager>
+    </ImageView>
 
     <ImageView
         android:id="@+id/RL"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="420dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/panel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_pager_board"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/weather_date"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="330dp"
         android:text="31.12.2021"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +55,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="315dp"
         android:src="@drawable/rectangle"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,9 +64,9 @@
         android:id="@+id/location"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="340dp"
-        android:text="location"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="330dp"
+        tools:text="location"
         android:textSize="15sp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,9 +96,9 @@
         android:id="@+id/weather_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="10dp"
-        android:text="33"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="20dp"
+        tools:text="33"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weather_date" />
@@ -128,7 +137,7 @@
         android:id="@+id/im_pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/pressure"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +169,7 @@
         android:id="@+id/text_pressure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
+        android:layout_marginStart="170dp"
         android:layout_marginTop="10dp"
         android:text="1,009mBar"
         android:textColor="@color/black"
@@ -195,7 +204,7 @@
         android:id="@+id/pressure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="10dp"
         android:text="pressure"
         android:textSize="12sp"
@@ -228,7 +237,7 @@
         android:id="@+id/im_sunset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/sunrise"
         app:layout_constraintStart_toStartOf="parent"
@@ -260,7 +269,7 @@
         android:id="@+id/text_sunset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
+        android:layout_marginStart="170dp"
         android:layout_marginTop="10dp"
         android:text="4:42PM"
         android:textColor="@color/black"
@@ -295,7 +304,7 @@
         android:id="@+id/sunset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="10dp"
         android:text="Sunset"
         android:textSize="12sp"

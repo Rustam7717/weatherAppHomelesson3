@@ -5,6 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,11 +45,23 @@ public class WeatherFragment extends Fragment {
 
     private void setObservers() {
         viewModel.getWeatherData().observe(getViewLifecycleOwner(), weatherModels -> {
-            binding.location.setText(weatherModels.data.getName());
-            binding.tempUp.setText(String.valueOf(weatherModels.data.getMain().getTempMax()));
-            binding.tempDown.setText(String.valueOf(weatherModels.data.getMain().getTempMin()));
-            binding.weatherTemp.setText(String.valueOf(weatherModels.data.getCoord().getLat()));
+            switch (weatherModels.status) {
+                case LOADING: {
+                    Log.d("TAG", "setObservers: ");
+                break;
+            }
+                case SUCCESS: {
+                    binding.location.setText(weatherModels.data.getName());
+                binding.tempUp.setText(String.valueOf(weatherModels.data.getMain().getTempMax()));
+                binding.tempDown.setText(String.valueOf(weatherModels.data.getMain().getTempMin()));
+                binding.weatherTemp.setText(String.valueOf(weatherModels.data.getCoord().getLat()));
+                break;
+                }
+                case ERROR:
+                Log.e("TAG", "setObservers: " + weatherModels.msg);
+            }
 
         });
+
     }
 }

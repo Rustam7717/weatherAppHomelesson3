@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://openweathermap.org/data/2.5/")
+            .baseUrl("https://api.openweathermap.org/data/2.5/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideClient()).build();
 
