@@ -9,5 +9,24 @@
         android:id="@+id/weatherFragment"
         android:name="com.example.weatherapphome.ui.fragments.WeatherFragment"
         android:label="fragment_weather"
-        tools:layout="@layout/fragment_weather" />
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_weatherFragment_to_cityNavFragment"
+            app:destination="@id/cityNavFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="CityNav"
+            app:argType="string"
+            android:defaultValue="Bishkek" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityNavFragment"
+        android:name="com.example.weatherapphome.ui.fragments.CityNavFragment"
+        android:label="fragment_city_nav"
+        tools:layout="@layout/fragment_city_nav">
+        <action
+            android:id="@+id/action_cityNavFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+
 </navigation>
