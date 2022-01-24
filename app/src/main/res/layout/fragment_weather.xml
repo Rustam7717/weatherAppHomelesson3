@@ -10,22 +10,21 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="325dp"
+        android:layout_height="340dp"
         android:src="@drawable/graphic"
+        app:layout_constraintHorizontal_weight="700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/view_pager_board"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="@id/RL"
-        tools:layout_editor_absoluteY="52dp">
-
-
-    </ImageView>
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        tools:layout_editor_absoluteY="52dp"/>
 
     <ImageView
         android:id="@+id/RL"
@@ -33,7 +32,7 @@
         android:layout_height="420dp"
         android:layout_marginTop="280dp"
         android:background="@drawable/panel"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,9 +96,9 @@
         android:id="@+id/weather_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="20dp"
-        tools:text="33"
+        android:text="33"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weather_date" />
@@ -128,7 +127,7 @@
         android:id="@+id/im_humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/himidity"
         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +181,7 @@
         android:id="@+id/text_humidity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:text="49%"
         android:textColor="@color/black"
@@ -228,7 +227,7 @@
         android:id="@+id/im_sunrise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/sunset"
         app:layout_constraintStart_toStartOf="parent"
@@ -282,7 +281,7 @@
         android:id="@+id/text_sunrise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:text="9:16PM"
         android:textColor="@color/black"
@@ -294,7 +293,7 @@
         android:id="@+id/day_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:text="Day Time"
         android:textSize="12sp"
@@ -316,12 +315,15 @@
         android:id="@+id/sunrise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="310dp"
         android:layout_marginTop="10dp"
         android:text="Sunrise"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sand_clock" />
+
+
+
 
     <!--    <LinearLayout-->
     <!--        android:layout_width="match_parent"-->
