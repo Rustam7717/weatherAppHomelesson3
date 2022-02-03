@@ -48,7 +48,7 @@ public class CityNavFragment extends Fragment {
             public void onClick(View view) {
                 controller.navigate(CityNavFragmentDirections
                         .actionCityNavFragmentToWeatherFragment()
-                        .setCityNav(binding.tvCityEnter.getText().toString().trim()));
+                        .setCityNav(binding.etCityInfo.getText().toString().trim()));
             }
         });
     }

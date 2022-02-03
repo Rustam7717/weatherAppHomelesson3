@@ -1,140 +1,158 @@
 
 package com.example.weatherapphome.data.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 import java.util.List;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class WeatherModel {
 
-    @SerializedName("base")
-    private String mBase;
-    @SerializedName("clouds")
-    private Clouds mClouds;
-    @SerializedName("cod")
-    private Long mCod;
     @SerializedName("coord")
-    private Coord mCoord;
-    @SerializedName("dt")
-    private Long mDt;
-    @SerializedName("id")
-    private Long mId;
-    @SerializedName("main")
-    private Main mMain;
-    @SerializedName("name")
-    private String mName;
-    @SerializedName("sys")
-    private Sys mSys;
-    @SerializedName("timezone")
-    private Long mTimezone;
-    @SerializedName("visibility")
-    private Long mVisibility;
+    @Expose
+    private Coord coord;
     @SerializedName("weather")
-    private List<Weather> mWeather;
+    @Expose
+    private List<WeatherModel> weather;
+    @SerializedName("base")
+    @Expose
+    private String base;
+    @SerializedName("main")
+    @Expose
+    private Main main;
+    @SerializedName("visibility")
+    @Expose
+    private Integer visibility;
     @SerializedName("wind")
-    private Wind mWind;
-
-    public String getBase() {
-        return mBase;
-    }
-
-    public void setBase(String base) {
-        mBase = base;
-    }
-
-    public Clouds getClouds() {
-        return mClouds;
-    }
-
-    public void setClouds(Clouds clouds) {
-        mClouds = clouds;
-    }
-
-    public Long getCod() {
-        return mCod;
-    }
-
-    public void setCod(Long cod) {
-        mCod = cod;
-    }
+    @Expose
+    private Wind wind;
+    @SerializedName("clouds")
+    @Expose
+    private Clouds clouds;
+    @SerializedName("dt")
+    @Expose
+    private Integer dt;
+    @SerializedName("sys")
+    @Expose
+    private Sys sys;
+    @SerializedName("timezone")
+    @Expose
+    private Integer timezone;
+    @SerializedName("id")
+    @Expose
+    @PrimaryKey
+    private Integer id;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("cod")
+    @Expose
+    private Integer cod;
 
     public Coord getCoord() {
-        return mCoord;
+        return coord;
     }
 
     public void setCoord(Coord coord) {
-        mCoord = coord;
+        this.coord = coord;
     }
 
-    public Long getDt() {
-        return mDt;
+    public List<WeatherModel> getWeather() {
+        return weather;
     }
 
-    public void setDt(Long dt) {
-        mDt = dt;
+    public void setWeather(List<WeatherModel> weather) {
+        this.weather = weather;
     }
 
-    public Long getId() {
-        return mId;
+    public String getBase() {
+        return base;
     }
 
-    public void setId(Long id) {
-        mId = id;
+    public void setBase(String base) {
+        this.base = base;
     }
 
     public Main getMain() {
-        return mMain;
+        return main;
     }
 
     public void setMain(Main main) {
-        mMain = main;
+        this.main = main;
     }
 
-    public String getName() {
-        return mName;
+    public Integer getVisibility() {
+        return visibility;
     }
 
-    public void setName(String name) {
-        mName = name;
-    }
-
-    public Sys getSys() {
-        return mSys;
-    }
-
-    public void setSys(Sys sys) {
-        mSys = sys;
-    }
-
-    public Long getTimezone() {
-        return mTimezone;
-    }
-
-    public void setTimezone(Long timezone) {
-        mTimezone = timezone;
-    }
-
-    public Long getVisibility() {
-        return mVisibility;
-    }
-
-    public void setVisibility(Long visibility) {
-        mVisibility = visibility;
-    }
-
-    public List<Weather> getWeather() {
-        return mWeather;
-    }
-
-    public void setWeather(List<Weather> weather) {
-        mWeather = weather;
+    public void setVisibility(Integer visibility) {
+        this.visibility = visibility;
     }
 
     public Wind getWind() {
-        return mWind;
+        return wind;
     }
 
     public void setWind(Wind wind) {
-        mWind = wind;
+        this.wind = wind;
+    }
+
+    public Clouds getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(Clouds clouds) {
+        this.clouds = clouds;
+    }
+
+    public Integer getDt() {
+        return dt;
+    }
+
+    public void setDt(Integer dt) {
+        this.dt = dt;
+    }
+
+    public Sys getSys() {
+        return sys;
+    }
+
+    public void setSys(Sys sys) {
+        this.sys = sys;
+    }
+
+    public Integer getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(Integer timezone) {
+        this.timezone = timezone;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getCod() {
+        return cod;
+    }
+
+    public void setCod(Integer cod) {
+        this.cod = cod;
     }
 
 }

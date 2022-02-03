@@ -13,6 +13,7 @@ public class WeatherViewModel extends ViewModel {
 
     public LiveData<WeatherModel> data;
     private WeatherRepository weatherRepository;
+    public LiveData<WeatherModel> localLiveData;
 
 
     @Inject
@@ -23,6 +24,9 @@ public class WeatherViewModel extends ViewModel {
     public MutableLiveData<WeatherModel> getWeatherData(String city) {
         return weatherRepository.getWeather(city);
 
+    }
+    public void getAll() {
+        localLiveData = weatherRepository.getAll();
     }
 
 }

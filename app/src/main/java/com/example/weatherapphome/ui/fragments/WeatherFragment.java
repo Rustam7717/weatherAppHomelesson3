@@ -1,6 +1,10 @@
 package com.example.weatherapphome.ui.fragments;
 
 import static java.lang.String.valueOf;
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -33,7 +37,14 @@ public class WeatherFragment extends Fragment {
                 .getSupportFragmentManager().findFragmentById(R.id.nav_host);
         controller = navHostFragment.getNavController();
 
+        if (checkConnection()) {
+            viewModel.getWeatherData(city);
+        } else {
+            viewModel.getAll();
+        }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -85,5 +96,14 @@ public class WeatherFragment extends Fragment {
 
         });
     }
+    private boolean checkConnection() {
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
+                .getState() == NetworkInfo.State.CONNECTED || connectivityManager
+                .getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+                .getState() == NetworkInfo.State.CONNECTED;
+    }
+
 }
 
