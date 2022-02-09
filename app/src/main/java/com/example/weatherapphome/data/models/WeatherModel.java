@@ -15,7 +15,7 @@ public class WeatherModel {
     private Coord coord;
     @SerializedName("weather")
     @Expose
-    private List<WeatherModel> weather;
+    private List<Weather> weather;
     @SerializedName("base")
     @Expose
     private String base;
@@ -59,11 +59,11 @@ public class WeatherModel {
         this.coord = coord;
     }
 
-    public List<WeatherModel> getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(List<WeatherModel> weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 

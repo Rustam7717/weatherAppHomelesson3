@@ -1,4 +1,4 @@
-package com.example.weatherapphome;
+package com.example.weatherapphome.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -6,6 +6,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
+
+import com.example.weatherapphome.R;
 import com.example.weatherapphome.databinding.ActivityMainBinding;
 
 import dagger.hilt.android.AndroidEntryPoint;

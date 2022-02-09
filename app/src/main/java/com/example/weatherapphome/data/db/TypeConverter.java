@@ -4,7 +4,7 @@ import com.example.weatherapphome.data.models.Clouds;
 import com.example.weatherapphome.data.models.Coord;
 import com.example.weatherapphome.data.models.Main;
 import com.example.weatherapphome.data.models.Sys;
-import com.example.weatherapphome.data.models.WeatherModel;
+import com.example.weatherapphome.data.models.Weather;
 import com.example.weatherapphome.data.models.Wind;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -14,14 +14,14 @@ import java.util.List;
 public class TypeConverter {
 
     @androidx.room.TypeConverter
-    public static List<WeatherModel> fromString(String value) {
-        Type listType = new TypeToken<List<WeatherModel>>() {
+    public static List<Weather> fromString(String value) {
+        Type listType = new TypeToken<List<Weather>>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
 
     @androidx.room.TypeConverter
-    public static String fromList(List<WeatherModel> list) {
+    public static String fromList(List<Weather> list) {
         return new Gson().toJson(list);
     }
 
@@ -75,3 +75,4 @@ public class TypeConverter {
         return new Gson().toJson(sys);
     }
 }
+

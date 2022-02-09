@@ -31,5 +31,16 @@
         android:layout_marginTop="16dp"
         />
 
+    <Button
+        android:id="@+id/go_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Map"/>
+
+
+
+
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

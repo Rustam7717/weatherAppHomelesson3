@@ -3,7 +3,7 @@ package com.example.weatherapphome.di;
 import android.content.Context;
 import androidx.room.Room;
 import com.example.weatherapphome.data.db.WeatherDatabase;
-import com.example.weatherapphome.data.db.dao.WeatherDao;
+import com.example.weatherapphome.data.db.WeatherDao;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;

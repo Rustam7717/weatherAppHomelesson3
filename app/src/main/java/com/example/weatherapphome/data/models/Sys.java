@@ -1,69 +1,65 @@
 
 package com.example.weatherapphome.data.models;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Sys {
 
-    @SerializedName("country")
-    private String mCountry;
-    @SerializedName("id")
-    private Long mId;
-    @SerializedName("message")
-    private Double mMessage;
-    @SerializedName("sunrise")
-    private Long mSunrise;
-    @SerializedName("sunset")
-    private Long mSunset;
     @SerializedName("type")
-    private Long mType;
+    @Expose
+    private Integer type;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("country")
+    @Expose
+    private String country;
+    @SerializedName("sunrise")
+    @Expose
+    private Integer sunrise;
+    @SerializedName("sunset")
+    @Expose
+    private Integer sunset;
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCountry() {
-        return mCountry;
+        return country;
     }
 
     public void setCountry(String country) {
-        mCountry = country;
+        this.country = country;
     }
 
-    public Long getId() {
-        return mId;
+    public Integer getSunrise() {
+        return sunrise;
     }
 
-    public void setId(Long id) {
-        mId = id;
+    public void setSunrise(Integer sunrise) {
+        this.sunrise = sunrise;
     }
 
-    public Double getMessage() {
-        return mMessage;
+    public Integer getSunset() {
+        return sunset;
     }
 
-    public void setMessage(Double message) {
-        mMessage = message;
-    }
-
-    public Long getSunrise() {
-        return mSunrise;
-    }
-
-    public void setSunrise(Long sunrise) {
-        mSunrise = sunrise;
-    }
-
-    public Long getSunset() {
-        return mSunset;
-    }
-
-    public void setSunset(Long sunset) {
-        mSunset = sunset;
-    }
-
-    public Long getType() {
-        return mType;
-    }
-
-    public void setType(Long type) {
-        mType = type;
+    public void setSunset(Integer sunset) {
+        this.sunset = sunset;
     }
 
 }

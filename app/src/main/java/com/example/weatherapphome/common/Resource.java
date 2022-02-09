@@ -3,30 +3,35 @@ package com.example.weatherapphome.common;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.weatherapphome.data.models.WeatherModel;
+
 public class Resource <T>{
     @NonNull
     public final Status status;
     public final T data;
-    public final String msg;
+    public final String message;
 
-    public Resource(@NonNull Status status, T data, String msg) {
+    public Resource(Status status, T data, String message) {
         this.status = status;
         this.data = data;
-        this.msg = msg;
+        this.message = message;
     }
+
     public static <T> Resource<T> success(@NonNull T data){
         return new Resource<>(Status.SUCCESS,data,null);
     }
-    public static <T> Resource<T> error(String msg,@Nullable T data){
-        return new Resource<>(Status.ERROR,data, msg);
+
+    public static <T> Resource<T> error(@NonNull T data,String message){
+        return new Resource<>(Status.ERROR,data,message);
     }
+
     public static <T> Resource<T> loading(){
         return new Resource<>(Status.LOADING,null,null);
     }
 
-    public enum Status {
-        LOADING,
+    public enum Status{
         SUCCESS,
-        ERROR
+        ERROR,
+        LOADING
     }
 }

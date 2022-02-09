@@ -27,6 +27,18 @@
         <action
             android:id="@+id/action_cityNavFragment_to_weatherFragment"
             app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_cityNavFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.weatherapphome.ui.fragments.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
     </fragment>
 
 </navigation>
